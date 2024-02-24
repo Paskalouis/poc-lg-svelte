@@ -1,23 +1,6 @@
-<script lang="ts">
-	import groupsJson from '../lib/groups.json';
-  import type { Group } from '../types';
-
-  function getGroups(): Promise<Group[]> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(groupsJson.data);
-      }, 500);
-    });
-  }
-
-  /**
-	 * @type {Group[]}
-	 */
-  let groups: Group[] = []
-
-  getGroups().then((value) => {
-    groups = value
-  })
+<script>
+	/** @type {import('./$types').PageData} */
+	export let data;
 </script>
 
 <svelte:head>
@@ -39,7 +22,7 @@
           decoding="auto"
         />
         <div data-testid="home-cardgame-section" class="container mx-auto px-4 lg:px-10 py-16">
-          {#each groups as group}
+          {#each data.groups as group}
             <section class="mb-8 md:mb-10">
               <h2 class="text-base md:text-xl font-bold pl-4 md:pl-6 border-l-4 border-l-blue-600 mb-4 md:mb-8">{group.title}</h2>
 
