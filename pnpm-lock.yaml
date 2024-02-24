@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  '@builder.io/partytown':
+    specifier: ^0.9.2
+    version: 0.9.2
+
 devDependencies:
   '@fontsource/fira-mono':
     specifier: ^4.5.10
@@ -94,6 +99,12 @@ packages:
       '@jridgewell/gen-mapping': 0.3.4
       '@jridgewell/trace-mapping': 0.3.23
     dev: true
+
+  /@builder.io/partytown@0.9.2:
+    resolution: {integrity: sha512-aoXFGyjquwlreLeKDdliXTXWIsnIKpM3moKo7hI++N8yHbH9idSoa/GpvsFxwcPO+FnA+IrhFs0LZGGjRZiQew==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    dev: false
 
   /@esbuild/aix-ppc64@0.19.12:
     resolution: {integrity: sha512-bmoCYyWdEL3wDQIVbcyzRyeKLgk2WtWLTWz1ZIAZF/EGbNOwSA6ew3PftJ1PqMiOOGu0OyFMzG53L0zqIpPeNA==}

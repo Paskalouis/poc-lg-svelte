@@ -1,8 +1,28 @@
 <script>
+	import { partytownSnippet } from '@builder.io/partytown/integration'
 	import "../app.css";
 	import Header from './Header.svelte';
 	import './styles.css';
 </script>
+
+<svelte:head>
+	<script>
+		// Forward the necessary functions to the web worker layer
+		partytown = {
+			forward: ['dataLayer.push']
+		};
+	</script>
+
+	{@html '<script>' + partytownSnippet() + '</script>'}
+
+	<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-QN845YQVJR"></script>
+	<script type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-QN845YQVJR');
+	</script>
+</svelte:head>
 
 <div class="app">
 	<Header />
